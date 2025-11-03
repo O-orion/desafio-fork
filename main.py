@@ -16,7 +16,7 @@ Instruções:
 
 # Função para calcular a média
 def calcular_media(lista):
-    # Desafio conclu[ido]wwwwewwwewewewewewwewe
+    # Desafio conclu[ido]wwwwewwwewewewewewewewwewe
     # TODO: implementar awwwewwe soma dos wewewweweelementos e dividir pelo tamanho da lista
     pass
 
