@@ -29,8 +29,8 @@ def calcular_mediana(lista):
 
 # Função para calcular a moda
 def calcular_moda(lista):
-    # TODO: encontrar o valor que mais aparece
-    # 💡 Dica: use um dicionário para contar as ocorrências
+    # TODO: encontrar o valor que mais aparece ----
+    # 💡 Dica: use um dicionário para contar as ocorrências ----
     pass
 
 
@@ -49,4 +49,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()  
