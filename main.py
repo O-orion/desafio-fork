@@ -1,3 +1,6 @@
+from collections import Counter
+import statistics
+
 """
 Desafio: Criar uma calculadora estatística simples em Python
 
@@ -17,21 +20,35 @@ Instruções:
 # Função para calcular a média
 def calcular_media(lista):
     # TODO: implementar a soma dos elementos e dividir pelo tamanho da lista
-    pass
-
+    return sum(lista) / len(lista) 
 
 # Função para calcular a mediana
 def calcular_mediana(lista):
     # TODO: ordenar a lista e encontrar o elemento do meio
     # 💡 Dica: se o tamanho for par, tire a média dos dois elementos centrais
-    pass
+    lista_ordenada = sorted(lista) 
+    n = len(lista_ordenada)
+    
+    if n % 2 == 1:
+        indice_central = n // 2
+        return lista_ordenada[indice_central]
+    else:
+        indice_1 = n // 2 - 1
+        indice_2 = n // 2
+        return (lista_ordenada[indice_1] + lista_ordenada[indice_2]) / 2
 
 
-# Função para calcular a moda
 def calcular_moda(lista):
     # TODO: encontrar o valor que mais aparece
-    # 💡 Dica: use um dicionário para contar as ocorrências
-    pass
+    # 💡 Dica: use um dicionário para contar as ocorrências 
+    contagem = Counter(lista)
+    
+    # Encontra a frequência máxima
+    frequencia_maxima = contagem.most_common(1)
+
+    moda = frequencia_maxima[0][0]
+
+    return moda
 
 
 def main():
@@ -50,3 +67,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
