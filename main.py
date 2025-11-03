@@ -32,6 +32,46 @@ def calcular_moda(lista):
     # TODO: encontrar o valor que mais aparece
     # 💡 Dica: use um dicionário para contar as ocorrências
     pass
+def calcular_media(lista):
+    if not lista:
+        return None  # ou lançar um erro, dependendo da preferência
+    return sum(lista) / len(lista)
+
+
+# Função para calcular a mediana
+def calcular_mediana(lista):
+    if not lista:
+        return None
+    lista_ordenada = sorted(lista)
+    n = len(lista_ordenada)
+    meio = n // 2
+
+    if n % 2 == 1:
+        # Tamanho ímpar: retorna o elemento do meio
+        return lista_ordenada[meio]
+    else:
+        # Tamanho par: retorna a média dos dois elementos centrais
+        return (lista_ordenada[meio - 1] + lista_ordenada[meio]) / 2
+
+
+# Função para calcular a moda
+def calcular_moda(lista):
+    if not lista:
+        return None
+    contagem = {}
+    for valor in lista:
+        contagem[valor] = contagem.get(valor, 0) + 1
+
+    max_contagem = max(contagem.values())
+    # Encontra todos os valores com a contagem máxima
+    modas = [k for k, v in contagem.items() if v == max_contagem]
+
+    # Se todos os valores aparecem com a mesma frequência, não há moda
+    if len(modas) == len(set(lista)):
+        return None  # ou uma mensagem indicando que não há moda
+
+    return modas[0]  # Retorna a primeira moda encontrada
+
 
 
 def main():
