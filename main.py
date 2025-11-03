@@ -14,39 +14,34 @@ Instruções:
 💡 Dica: não use bibliotecas externas como numpy ou statistics.
 """
 
+
 # Função para calcular a média
 def calcular_media(lista):
-    # TODO: implementar a soma dos elementos e dividir pelo tamanho da lista
-    pass
+    soma = 0
+    for num in lista:
+        soma += num
+    return soma / len(lista)
 
 
 # Função para calcular a mediana
 def calcular_mediana(lista):
-    # TODO: ordenar a lista e encontrar o elemento do meio
-    # 💡 Dica: se o tamanho for par, tire a média dos dois elementos centrais
-    pass
+    lista_ordenada = sorted(lista)
+    n = len(lista_ordenada)
+    meio = n // 2
+
+    if n % 2 == 0:
+        # média dos dois elementos centrais
+        return (lista_ordenada[meio - 1] + lista_ordenada[meio]) / 2
+    else:
+        # elemento central
+        return lista_ordenada[meio]
 
 
 # Função para calcular a moda
 def calcular_moda(lista):
-    # TODO: encontrar o valor que mais aparece
-    # 💡 Dica: use um dicionário para contar as ocorrências
-    pass
+    contagem = {}
+    for num in lista:
+        contagem[num] = contagem.get(num, 0) + 1
 
-
-def main():
-    try:
-        numeros = [10, 20, 20, 30, 40, 40, 40, 50]
-
-        print("📊 Calculadora Estatística")
-        print(f"Lista de números: {numeros}")
-        print(f"Média: {calcular_media(numeros)}")
-        print(f"Mediana: {calcular_mediana(numeros)}")
-        print(f"Moda: {calcular_moda(numeros)}")
-
-    except Exception as e:
-        print(f"⚠️ Ocorreu um erro: {e}")
-
-
-if __name__ == "__main__":
-    main()
+    max_ocorrencias = max(contagem.values())
+    modas = [num for num, qtd in contagem.items() if qtd == max_ocorrencias]
