@@ -14,24 +14,71 @@ Instruções:
 💡 Dica: não use bibliotecas externas como numpy ou statistics.
 """
 
+#from collections import Counter
+
 # Função para calcular a média
 def calcular_media(lista):
+    """
+    Calcula a média aritmética de uma lista de números.
+    Retorna 0 se a lista estiver vazia para evitar erro de divisão por zero.
+    """
+    if not lista:
+        return 0
     # TODO: implementar a soma dos elementos e dividir pelo tamanho da lista
-    pass
+    soma = sum(lista)
+    tamanho = len(lista)
+    media = soma / tamanho
+    return media
 
 
 # Função para calcular a mediana
 def calcular_mediana(lista):
+    """
+    Calcula a mediana de uma lista de números.
+    Retorna None se a lista estiver vazia.
+    """
+    if not lista:
+        return None
+
     # TODO: ordenar a lista e encontrar o elemento do meio
+    lista_ordenada = sorted(lista)
+    n = len(lista_ordenada)
+
     # 💡 Dica: se o tamanho for par, tire a média dos dois elementos centrais
-    pass
+    if n % 2 == 1:
+        # Tamanho ímpar: retorna o elemento central
+        indice_mediana = n // 2
+        mediana = lista_ordenada[indice_mediana]
+    else:
+        # Tamanho par: média dos dois elementos centrais
+        indice1 = n // 2 - 1
+        indice2 = n // 2
+        mediana = (lista_ordenada[indice1] + lista_ordenada[indice2]) / 2
+
+    return mediana
 
 
 # Função para calcular a moda
 def calcular_moda(lista):
-    # TODO: encontrar o valor que mais aparece
+    """
+    Calcula a moda (o(s) valor(es) que mais aparece(m)) de uma lista.
+    Retorna uma lista de modas ou None se a lista estiver vazia.
+    """
+    if not lista:
+        return None
+
     # 💡 Dica: use um dicionário para contar as ocorrências
-    pass
+    # TODO: encontrar o valor que mais aparece
+    ocorrencias = Counter(lista)
+    
+    # Encontra a frequência máxima (o maior número de ocorrências)
+    frequencia_maxima = max(ocorrencias.values())
+    
+    # Filtra os elementos que têm a frequência máxima (pode haver mais de um)
+    moda = [elemento for elemento, contagem in ocorrencias.items() if contagem == frequencia_maxima]
+    
+    # Retorna uma lista, pois pode ser multimodal
+    return moda
 
 
 def main():
