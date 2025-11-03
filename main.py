@@ -16,22 +16,59 @@ Instruções:
 
 # Função para calcular a média
 def calcular_media(lista):
-    # TODO: implementar a soma dos elementos e dividir pelo tamanho da lista
-    pass
+    # Implementar a soma dos elementos e dividir pelo tamanho da lista
+    # Tratamento básico: se a lista estiver vazia, retornar 0 para evitar ZeroDivisionError
+    if not lista:
+        return 0
+
+    total = 0
+    for numero in lista:
+        total += numero
+
+    return total / len(lista)
 
 
 # Função para calcular a mediana
 def calcular_mediana(lista):
-    # TODO: ordenar a lista e encontrar o elemento do meio
+    # Ordenar a lista e encontrar o elemento do meio
     # 💡 Dica: se o tamanho for par, tire a média dos dois elementos centrais
-    pass
+    # Tratamento básico: se a lista estiver vazia, retornar 0
+    if not lista:
+        return 0
+
+    ordenada = sorted(lista)
+    n = len(ordenada)
+    meio = n // 2
+
+    # Se n ímpar, retorna o elemento do meio
+    if n % 2 == 1:
+        return ordenada[meio]
+    # Se n par, retorna a média dos dois elementos centrais
+    else:
+        return (ordenada[meio - 1] + ordenada[meio]) / 2
 
 
 # Função para calcular a moda
 def calcular_moda(lista):
-    # TODO: encontrar o valor que mais aparece
+    # Encontrar o valor que mais aparece
     # 💡 Dica: use um dicionário para contar as ocorrências
-    pass
+    # Se a lista estiver vazia, não há moda definida
+    if not lista:
+        return None
+
+    ocorrencias = {}
+    for numero in lista:
+        ocorrencias[numero] = ocorrencias.get(numero, 0) + 1
+
+    # Encontra a(s) chave(s) com a maior contagem
+    max_count = max(ocorrencias.values())
+    modos = [valor for valor, cont in ocorrencias.items() if cont == max_count]
+
+    # Se houver apenas um modo, retorna o valor; se houver empate, retorna a lista de modos
+    if len(modos) == 1:
+        return modos[0]
+    else:
+        return sorted(modos)
 
 
 def main():
