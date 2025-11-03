@@ -17,6 +17,10 @@ Instruções:
 # Função para calcular a média
 def calcular_media(lista):
     # TODO: implementar a soma dos elementos e dividir pelo tamanho da lista
+   soma = 0
+    for elemento in lista:
+        soma += elemento
+        return soma/len(lista)
     pass
 
 
@@ -24,6 +28,14 @@ def calcular_media(lista):
 def calcular_mediana(lista):
     # TODO: ordenar a lista e encontrar o elemento do meio
     # 💡 Dica: se o tamanho for par, tire a média dos dois elementos centrais
+    lista_ordenada = sorted(lista)
+    n = len(lista_ordenada)
+    meio = n//2
+
+    if n%2 ==0:
+        return (lista_ordenada[meio-1] + lista_ordenada[meio] / 2
+                else: 
+                return lista_ordenada[meio]
     pass
 
 
@@ -31,6 +43,20 @@ def calcular_mediana(lista):
 def calcular_moda(lista):
     # TODO: encontrar o valor que mais aparece
     # 💡 Dica: use um dicionário para contar as ocorrências
+    contagem = {}
+    for elemento in contagem:
+        if elemento in contagem:
+            contagem[elemento] += 1
+        else:
+            contagem[elemento] = 1
+
+    maior_frequencia = 0
+    moda = None
+    for elemento, freq in contagem.items():
+        if freq > maior_frequencia:
+            maior_frequencia = freq
+            moda = elemento
+            return moda
     pass
 
 
