@@ -8,7 +8,7 @@ Instruções:
 1. Faça o fork deste repositório no seu GitHub.
 2. Clone o seu fork para sua máquina.
 3. Complete as funções abaixo.
-4. Teste o código executando: python calculadora_estatistica.py
+4. Teste o código executando: python caora_estatistica.py
 5. Envie um Pull Request com a sua solução.
 
 💡 Dica: não use bibliotecas externas como numpy ou statistics.
