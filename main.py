@@ -13,6 +13,7 @@ Instruções:
 
 💡 Dica: não use bibliotecas externas como numpy ou statistics.
 """
+print("Teste do Paulo Santos")
 
 # Função para calcular a média
 def calcular_media(lista):
