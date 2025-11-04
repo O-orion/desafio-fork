@@ -2,14 +2,7 @@
 Desafio: Criar uma calculadora estatística simples em Python
 
 Tarefa:
-Implemente as funções abaixo para calcular média, mediana e moda de uma lista de números.
-
-Instruções:
-1. Faça o fork deste repositório no seu GitHub.
-2. Clone o seu fork para sua máquina.
-3. Complete as funções abaixo.
-4. Teste o código executando: python calculadora_estatistica.py
-5. Envie um Pull Request com a sua solução.
+Impl=
 
 💡 Dica: não use bibliotecas externas como numpy ou statistics.
 """
